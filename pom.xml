@@ -133,11 +133,11 @@
       <artifactId>jersey-core</artifactId>
       <version>1.12</version>
     </dependency>
-    <dependency>
+<!--    <dependency>
       <groupId>com.eeduspace</groupId>
       <artifactId>uuims-java-sdk</artifactId>
       <version>1.0-SNAPSHOT</version>
-    </dependency>
+    </dependency>-->
 
     <!--swagger-->
     <dependency>
