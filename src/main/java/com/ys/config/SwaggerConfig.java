@@ -13,10 +13,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * Created by :Guozhihua
- * Date： 2017/11/15.
- */
+
 @Configuration
 
 @EnableWebMvc // 支持springmvc
