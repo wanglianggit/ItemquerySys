@@ -26,7 +26,7 @@ import java.util.List;
  */
 @Configuration
 @ComponentScan({"pub.tbc.mybatis.plugin", "com.ys"})
-@MapperScan("com.yj.mapper") // xxxMapper.xml文件路径（跟mapper接口同一目录）
+@MapperScan("com.ys.dao") // xxxMapper.xml文件路径（跟mapper接口同一目录）
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
