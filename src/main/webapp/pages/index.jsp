@@ -64,8 +64,8 @@
                 </p>
             </div>
             <div class="r-forget cl">
-                <a href="./reg.jsp" class="z">账号注册</a>
-                <a href="./getpass.jsp" class="y">忘记密码</a>
+                <a href="./reg" class="z">账号注册</a>
+                <a href="./getpass" class="y">忘记密码</a>
             </div>
             <button class="lang-btn off log-btn">登录</button>
             <div class="third-party">

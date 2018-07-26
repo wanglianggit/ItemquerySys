@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="base.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -58,7 +59,7 @@
                     <p>我已阅读并接受 <a href="#" target="_brack">《XXXX协议说明》</a></p>
                 </div>
                 <button class="lang-btn">注册</button>
-                <div class="bottom-info">已有账号，<a href="./login.html">马上登录</a></div>
+                <div class="bottom-info">已有账号，<a href="./index">马上登录</a></div>
                 <div class="third-party">
                     <a href="#" class="log-qq icon-qq-round"></a>
                     <a href="#" class="log-qq icon-weixin"></a>

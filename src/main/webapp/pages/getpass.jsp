@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="base.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -24,7 +25,7 @@
     <div class="wpn">
         <div class="form-data find_password">
             <h4>找回密码</h4>
-            <p class="right_now">已有账号，<a href="./login.html">马上登录</a></p>
+            <p class="right_now">已有账号，<a href="./index">马上登录</a></p>
             <p class="p-input pos">
                 <label for="pc_tel">手机号/邮箱</label>
                 <input type="text" id="pc_tel">
