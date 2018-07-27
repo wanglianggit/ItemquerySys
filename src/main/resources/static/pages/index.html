@@ -1,12 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/7/26 0026
-  Time: 下午 1:35
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="base.jsp"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -15,16 +7,16 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="Keywords" content="网站关键词">
     <meta name="Description" content="网站介绍">
-    <link rel="stylesheet" href="<%=basePath%>/static/css/base.css">
-    <link rel="stylesheet" href="<%=basePath%>/static/css/iconfont.css">
-    <link rel="stylesheet" href="<%=basePath%>/static/css/reg.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/reg.css">
 </head>
 <body>
 <div id="ajax-hook"></div>
 <div class="wrap">
     <div class="wpn">
         <div class="form-data pos">
-            <a href=""><img src="<%=basePath%>/static/img/logo.png" class="head-logo"></a>
+            <a href=""><img src="../img/logo.png" class="head-logo"></a>
             <div class="change-login">
                 <p class="account_number on">账号登录</p>
                 <p class="message">短信登录</p>
@@ -64,8 +56,8 @@
                 </p>
             </div>
             <div class="r-forget cl">
-                <a href="./reg" class="z">账号注册</a>
-                <a href="./getpass" class="y">忘记密码</a>
+                <a href="./reg.html" class="z">账号注册</a>
+                <a href="./getpass.html" class="y">忘记密码</a>
             </div>
             <button class="lang-btn off log-btn">登录</button>
             <div class="third-party">
@@ -77,8 +69,8 @@
         </div>
     </div>
 </div>
-<script src="<%=basePath%>/static/js/jquery.js"></script>
-<script src="<%=basePath%>/static/js/agree.js"></script>
-<script src="<%=basePath%>/static/js/login.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/agree.js"></script>
+<script src="../js/login.js"></script>
 </body>
 </html>

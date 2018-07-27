@@ -145,7 +145,7 @@ public class DruidConfiguration extends WebMvcConfigurerAdapter {
         //druid
         registry.addResourceHandler("/druid/*")
                 .addResourceLocations("classpath:/META-INF/resources/");
-        //index.jsp
+
 //        registry.addResourceHandler("/*")
 //                .addResourceLocations("/");
         //swagger
