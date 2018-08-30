@@ -23,7 +23,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2).host("127.0.0.1:8080").groupName("通用API 文档").apiInfo(apiInfo()).
+        return new Docket(DocumentationType.SWAGGER_2).host("127.0.0.1:80").groupName("通用API 文档").apiInfo(apiInfo()).
                 produces(Sets.newHashSet("http"))
                 .select().
                 paths(PathSelectors.any()).build();
@@ -32,7 +32,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("物品查询—活动中心API在线文档-Development").termsOfServiceUrl("http://127.0.0.1:8080")
                 .contact(new Contact("wl", "http://www.e-edusunshine.com", "www.baidu.com")).version("1.0.0").description(
-                        "活动中心服务接口说明,   接口基础  path:  http://127.0.0.1:8080")
+                        "活动中心服务接口说明,   接口基础  path:  http://127.0.0.1:80")
                 .build();
     }
 
