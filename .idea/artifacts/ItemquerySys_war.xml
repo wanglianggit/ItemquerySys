@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ItemquerySys:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ItemquerySys.war">
+      <element id="artifact" artifact-name="ItemquerySys:war exploded" />
+    </root>
+  </artifact>
+</component>
