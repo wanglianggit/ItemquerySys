@@ -5,6 +5,7 @@ import com.ys.response.BaseResponse;
 import com.ys.response.ResponseCode;
 import com.ys.response.ValiResult;
 import com.ys.service.UserService;
+import com.ys.util.DownloadFile;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import org.slf4j.Logger;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -74,6 +78,7 @@ public class LoginController extends ABaseController {
                     BaseResponse.setResponse(baseResponse, ResponseCode.FILL_USER_REGISTER_INFO.code, "");
                 } else {
                     baseResponse.setResult(itemUsers);
+                    baseResponse.setCode("0000");
                     baseResponse.setMessage("SUCCESS");
                 }
             } catch (Exception e) {
@@ -83,4 +88,19 @@ public class LoginController extends ABaseController {
         }
     return baseResponse;
     }
-}
+
+    @RequestMapping(value = "/getCityPriceMes", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    @ApiImplicitParam(value = "2018-10-11", name = "day", paramType = "form")
+    @ResponseBody
+    public void getCityPriceMes(HttpServletRequest request, HttpServletResponse response) {
+        String day = request.getParameter("day");
+        String city = request.getParameter("city");
+        String url = "/usr/local/images/statics/" + city + "_" + day + ".xls";
+//        String url = "D://301//file//" + day + ".xls";
+        File file = new File(url);
+        String path= file.getAbsolutePath();
+        DownloadFile.download(path,day, response);
+        BaseResponse baseResponse = new BaseResponse();
+        baseResponse.setMessage("success");
+    }
+ }

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ys.dao.CityPriceMapper" >
+  <resultMap id="BaseResultMap" type="com.ys.entity.CityPrice" >
+    <id column="fid" property="fid" jdbcType="BIGINT" />
+    <result column="fcity" property="fcity" jdbcType="VARCHAR" />
+    <result column="flastcityprice" property="flastcityprice" jdbcType="VARCHAR" />
+    <result column="flastpricerate" property="flastpricerate" jdbcType="VARCHAR" />
+    <result column="fnearcityprice" property="fnearcityprice" jdbcType="VARCHAR" />
+    <result column="fnearpricerate" property="fnearpricerate" jdbcType="VARCHAR" />
+    <result column="ftodaycityprice" property="ftodaycityprice" jdbcType="VARCHAR" />
+    <result column="ftodaypricerate" property="ftodaypricerate" jdbcType="VARCHAR" />
+    <result column="cratetime" property="cratetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fcity, flastcityprice, flastpricerate, fnearcityprice, fnearpricerate, ftodaycityprice, 
+    ftodaypricerate, cratetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from cityprice
+    where fid = #{fid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from cityprice
+    where fid = #{fid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ys.entity.CityPrice" >
+    insert into cityprice (fid, fcity, flastcityprice, 
+      flastpricerate, fnearcityprice, fnearpricerate, 
+      ftodaycityprice, ftodaypricerate, cratetime
+      )
+    values (#{fid,jdbcType=BIGINT}, #{fcity,jdbcType=VARCHAR}, #{flastcityprice,jdbcType=VARCHAR}, 
+      #{flastpricerate,jdbcType=VARCHAR}, #{fnearcityprice,jdbcType=VARCHAR}, #{fnearpricerate,jdbcType=VARCHAR}, 
+      #{ftodaycityprice,jdbcType=VARCHAR}, #{ftodaypricerate,jdbcType=VARCHAR}, #{cratetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ys.entity.CityPrice" >
+    insert into cityprice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="fcity != null" >
+        fcity,
+      </if>
+      <if test="flastcityprice != null" >
+        flastcityprice,
+      </if>
+      <if test="flastpricerate != null" >
+        flastpricerate,
+      </if>
+      <if test="fnearcityprice != null" >
+        fnearcityprice,
+      </if>
+      <if test="fnearpricerate != null" >
+        fnearpricerate,
+      </if>
+      <if test="ftodaycityprice != null" >
+        ftodaycityprice,
+      </if>
+      <if test="ftodaypricerate != null" >
+        ftodaypricerate,
+      </if>
+      <if test="cratetime != null" >
+        cratetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        #{fid,jdbcType=BIGINT},
+      </if>
+      <if test="fcity != null" >
+        #{fcity,jdbcType=VARCHAR},
+      </if>
+      <if test="flastcityprice != null" >
+        #{flastcityprice,jdbcType=VARCHAR},
+      </if>
+      <if test="flastpricerate != null" >
+        #{flastpricerate,jdbcType=VARCHAR},
+      </if>
+      <if test="fnearcityprice != null" >
+        #{fnearcityprice,jdbcType=VARCHAR},
+      </if>
+      <if test="fnearpricerate != null" >
+        #{fnearpricerate,jdbcType=VARCHAR},
+      </if>
+      <if test="ftodaycityprice != null" >
+        #{ftodaycityprice,jdbcType=VARCHAR},
+      </if>
+      <if test="ftodaypricerate != null" >
+        #{ftodaypricerate,jdbcType=VARCHAR},
+      </if>
+      <if test="cratetime != null" >
+        #{cratetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ys.entity.CityPrice" >
+    update cityprice
+    <set >
+      <if test="fcity != null" >
+        fcity = #{fcity,jdbcType=VARCHAR},
+      </if>
+      <if test="flastcityprice != null" >
+        flastcityprice = #{flastcityprice,jdbcType=VARCHAR},
+      </if>
+      <if test="flastpricerate != null" >
+        flastpricerate = #{flastpricerate,jdbcType=VARCHAR},
+      </if>
+      <if test="fnearcityprice != null" >
+        fnearcityprice = #{fnearcityprice,jdbcType=VARCHAR},
+      </if>
+      <if test="fnearpricerate != null" >
+        fnearpricerate = #{fnearpricerate,jdbcType=VARCHAR},
+      </if>
+      <if test="ftodaycityprice != null" >
+        ftodaycityprice = #{ftodaycityprice,jdbcType=VARCHAR},
+      </if>
+      <if test="ftodaypricerate != null" >
+        ftodaypricerate = #{ftodaypricerate,jdbcType=VARCHAR},
+      </if>
+      <if test="cratetime != null" >
+        cratetime = #{cratetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where fid = #{fid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ys.entity.CityPrice" >
+    update cityprice
+    set fcity = #{fcity,jdbcType=VARCHAR},
+      flastcityprice = #{flastcityprice,jdbcType=VARCHAR},
+      flastpricerate = #{flastpricerate,jdbcType=VARCHAR},
+      fnearcityprice = #{fnearcityprice,jdbcType=VARCHAR},
+      fnearpricerate = #{fnearpricerate,jdbcType=VARCHAR},
+      ftodaycityprice = #{ftodaycityprice,jdbcType=VARCHAR},
+      ftodaypricerate = #{ftodaypricerate,jdbcType=VARCHAR},
+      cratetime = #{cratetime,jdbcType=TIMESTAMP}
+    where fid = #{fid,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -167,26 +167,28 @@ $(function(){
 			$(".log-btn").click(function(){
 				// var type = 'phone';
 				var inp = $.trim($('#num').val());
-				var pass = $.md5($.trim($('#pass').val()));
+				// var pass = $.md5($.trim($('#pass').val()));
+				var pass = $.trim($('#pass').val());
 				if (checkAccount(inp) && checkPass(pass)) {
-					var ldata = {userinp:inp,password:pass};
+					var params = {userName:inp,password:pass};
 					if (!$('.code').hasClass('hide')) {
 						code = $.trim($('#veri').val());
 						if (!checkCode(code)) {
 							return false;
 						}
-						ldata.code = code;
+                        params.code = code;
 					}
+                    var dataJson = JSON.stringify({"params":params});
 					$.ajax({
-			            url: '/dologin',
+			            url: 'http://127.0.0.1:8080/logginController/login',
 			            type: 'post',
 			            dataType: 'json',
 			            async: true,
-			            data: ldata,
+			            data: {params:dataJson},
 			            success:function(data){
-			                if (data.code == '0') {
+			                if (data.code == '0000') {
 			                    // globalTip({'msg':'登录成功!','setTime':3,'jump':true,'URL':'http://www.ui.cn'});
-			                    globalTip(data.msg);
+			                    globalTip(data.message);
 			                } else if(data.code == '2') {
 			                	$(".log-btn").off('click').addClass("off");
 			                    $('.pass-err').removeClass('hide').find('em').text(data.msg);
@@ -235,7 +237,7 @@ $(function(){
 			            success:function(data){
 			                if (data.code == '0') {
 			                	// globalTip({'msg':'登录成功!','setTime':3,'jump':true,'URL':'http://www.ui.cn'});
-			                	globalTip(data.msg);
+			                	globalTip(data.message);
 			                } else if(data.code == '1') {
 			                	$(".log-btn").off('click').addClass("off");
 			                    $('.num2-err').removeClass('hide').text(data.msg);
