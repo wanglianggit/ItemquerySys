@@ -22,7 +22,7 @@ public class AccessTokenInitalizer {
     /**
      * 每隔2小时获取一次最新的access_token，存取到redis里
      */
-    @Scheduled(cron = "0 0 0/2 * * ? ")
+//    @Scheduled(cron = "0 0 0/2 * * ? ")
     public void autorefreshAccessToken() {
         valueOperations.set("access_token", WeixinUtil.getAccessToken());
     }

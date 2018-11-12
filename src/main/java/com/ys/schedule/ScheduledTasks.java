@@ -26,7 +26,7 @@ public class ScheduledTasks {
     @Autowired
     private CityPriceService cityPriceService;
     //每1分钟执行一次
-    @Scheduled(cron="20 05 14 * * ?")
+    @Scheduled(cron="20 56 17 * * ?")
 //    @Scheduled(cron="20 * * * * ?")
     public void reportCurrentByCron() {
         String url = "http://www.creprice.cn/district/ZY.html?city=zz";
