@@ -23,7 +23,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2).host("127.0.0.1:80").groupName("通用API 文档").apiInfo(apiInfo()).
+        return new Docket(DocumentationType.SWAGGER_2).host("127.0.0.1:8080").groupName("通用API 文档").apiInfo(apiInfo()).
                 produces(Sets.newHashSet("http"))
                 .select().
                 paths(PathSelectors.any()).build();

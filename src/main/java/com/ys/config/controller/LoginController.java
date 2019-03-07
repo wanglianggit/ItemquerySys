@@ -103,4 +103,19 @@ public class LoginController extends ABaseController {
         BaseResponse baseResponse = new BaseResponse();
         baseResponse.setMessage("success");
     }
+
+    @RequestMapping(value = "/getUserMap", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    @ApiImplicitParam(value = "2018-10-11", name = "day", paramType = "form")
+    @ResponseBody
+    public BaseResponse getUserMap(HttpServletRequest request, HttpServletResponse response) {
+        BaseResponse baseResponse = new BaseResponse();
+        ItemUser user = new ItemUser();
+        try {
+            Map map = userService.selectUserMap();
+            baseResponse.setResult(map);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return baseResponse;
+    }
  }
